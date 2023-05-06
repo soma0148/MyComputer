@@ -1,0 +1,437 @@
+/* Her er en lille smule grundlæggende styling
+Det er der ingen grund til at lave om, men du kan gøre det, hvis du vil. */
+p {
+  background-color: rgb(245, 201, 87); /* Sætter baggrundsfarven på <p> */
+  border: 1px solid rgb(168, 165, 30); /* Laver en ramme på <p> */
+  border-radius: 1vw; /* Gør hjørnerne på <p>'s ramme runde (vw = viewport-width, dvs. procent af den browserens vindue) */
+  padding: 0.4em; /* Laver lidt afstand mellem rammen og teksten */
+  margin: 0; /* Sørger for, at der ikke er nogen margin på <p> */
+  font-family: arial, verdana, sans-serif; /* Vælger font for <p> */
+  box-shadow: 2px 4px #99a; /* Laver en skygge der går 2 pixels til højre, 4 pixels ned og er svagt blålig grå <p> */
+}
+
+/* I det følgende står øvelsen først som kommentar 
+Så står der hvilke CSS properties, der skal bruges
+Når du har løst en opgave og set, at det virker, kan du gøre al din CSS til kommentarer, og gå videre til næste øvelse
+Hvis du ikke kan løse opgaven, kan du scrolle ned i bunden af dokumentet og finde et løsningsforslag
+*/
+
+/* Vi arbejder i disse øvelser udelukkende på de 24 <p>'er i <main> */
+
+/* ************************************************************************* */
+/* ØVELSE 1: Få grid'et til at virke 
+
+
+
+ 1. Gør <main> til en grid container 
+ 2. Lav tre lige brede kolonner i grid'e*/
+ /* Properties: display, grid-template-columns */
+ /* main{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+} */
+/* ************************************************************************* */
+/* ************************************************************************* */
+/* ØVELSE 2: Få styr på kolonner 
+
+ 1. Gør <main> til en grid container 
+ 2. Lav tre kolonner, hvor den første tager halvdelen af skærmen, og de andre to hver tager en fjerdedel 
+/* main{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+}*/
+ /*Properties: display, grid-template-columns */
+ /* main{
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+ } */
+/* ************************************************************************* */
+
+/* ************************************************************************* */
+/* ØVELSE 3: Få styr på kolonner 2 
+
+ 1. Gør <main> til en grid container 
+ 2. Lav tre kolonner, hvor den første tager 3 dele af skærmen, den anden tager 1 del og den fjerde tager 4 dele 
+/* main{
+  display: grid
+  grid-template-columns: 3fr 1fr 4fr;
+}*/
+ /*Properties: display, grid-template-columns */
+ /* main{
+  display: grid;
+  grid-template-columns: 3fr 1fr 4fr;
+ } */
+/* ************************************************************************* */
+
+/* ************************************************************************* */
+/* ØVELSE 4: Forskellige størrelser på grid items a) 
+
+ 1. Gør <main> til en grid container 
+ 2. Lav tre lige store kolonner 
+ 3. Få grid item 4 (brug elementets class) til at fylde 2 kolonner*/ 
+ /*Properties på grid container: display, grid-template-columns  
+ Properties på grid item: grid-column */
+ /* main{
+  grid-template-columns: 1fr 1fr 1fr
+}
+.box04 {
+  grid-column: span 2;
+} */
+/* ************************************************************************* */
+
+/* ************************************************************************* */
+/* ØVELSE 5: Forskellige størrelser på grid items b) 
+
+ 1. Samme grid container som tidligere øvelser 
+ 2. Få grid item 4 (brug elementets class) til at fylde 2 kolonner OG 2 rows 
+/* main{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1rf;
+}*/
+/* .box04 {
+  grid-column: span 2;
+  grid-row: span 2;
+}*/
+/* Properties på grid container: display, grid-template-columns  
+ Properties på grid item: grid-column, grid-row */
+ /* main{
+  display:grid;
+  grid-template-columns: 1fr 1fr 1rf;
+ }
+ .box04 {
+  grid-column: span 2;
+  grid-row: span 2;
+ } */
+/* ************************************************************************* */
+
+/* ************************************************************************* */
+/* ØVELSE 6: Forskellige størrelser på grid items c) 
+
+ 1. Samme grid container som tidligere øvelser 
+ 2. Få grid item 4 til at fylde 2 kolonner 
+ 3. Få grid item 8 til at fylde 2 kolonner 
+ 4. Få grid item 3 til at fylde 3 rows 
+ EXTRA: Hvad sker der hvis du udvider box03, så den fylder 4 rows? 
+
+ Properties på grid container: display, grid-template-columns  
+ Properties på grid item: grid-column, grid-row */
+ /* main{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+ }
+ .box04 {
+  grid-column: span 2;
+ }
+ .box08 {
+  grid-column: span 2;
+ }
+ .box03 {
+  grid-row: span 3;
+ } */
+/* ************************************************************************* */
+
+/* ************************************************************************* */
+/* ØVELSE 7: Placering af grid items a) 
+
+ 1. Gør <main> til en grid container 
+ 2. Lav 6 lige store kolonner med functionen repeat()
+ 3. Få grid item 4 til at fylde kolonne 2 og 3  
+ 4. Få grid item 7 til at fylde kolonne 3, 4 og 5 i række 3
+
+ Properties på grid container: display, grid-template-columns
+ Properties på grid item: grid-column, grid-row */
+ /* main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+ }
+ .box04 {
+  grid-column: 2/4;
+ }
+ .box07 {
+  grid-column: 2/4;
+  grid-row: 3; 
+}*/
+ 
+/* ************************************************************************* */
+
+/* ************************************************************************* */
+/* ØVELSE 8: Placering af grid items b) 
+
+ 1. Gør <main> til en grid container 
+ 2. Lav 6 lige store kolonner med functionen repeat()
+ 3. Lav et 1em mellemrum mellem alle grid items
+ 4. Få grid item 4 til at fylde en hel række (fra første kolonne til den sidste)
+ 5. Få grid item 13 til at fylde 4 kolonner og spænde (span) over 3 rækker 
+
+ Properties på grid container: display, grid-template-columns, gap
+ Properties på grid item: grid-column, grid-row */
+/* 
+main {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1em
+ }
+ .box04 {
+  grid-column: 1 / -1
+}
+.box13 {
+  grid column: 1 / 5;
+  grid row: span 3;
+} */
+/************************************************************************* */
+
+/* ************************************************************************* */
+/* ØVELSE 9: Placering af grid items c) 
+
+ 1. Gør <main> til en grid container 
+ 2. Lav 6 lige store kolonner med functionen repeat()
+ 3. Lav et 1em mellemrum mellem alle grid items
+ 4. Placer box14 i øverste højre hjørne og spænde over de tre sidste kolonner
+ 5. Få samme box til at fylde 3 rækker
+ 6. Giv box'en en anden farve for show ;)
+
+ Properties på grid container: display, grid-template-columns, gap
+ Properties på grid item: grid-column, grid-row */
+ main {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr) ;
+  gap: 1em;
+ }
+ .box14 {
+  
+ }
+/* ************************************************************************* */
+
+/* ************************************************************************* */
+/* ØVELSE 10: Valg af grid items a)
+
+ 1. Gør nu det samme med brug pseudo class ':last-child' (på selectoren p) til at vælge den sidste box (dvs. du skal IKKE bruge den 'class')
+
+ Properties på grid container: display, grid-template-columns, gap
+ Properties på grid item: grid-column, grid-row */
+/* ************************************************************************* */
+
+/* ************************************************************************* */
+/* ØVELSE 11: Valg af grid items b)
+
+ 1. Og gør det samme med første paragraf. Se om du kan gætte, hvad den hedder...
+
+ Properties på grid container: display, grid-template-columns, gap
+ Properties på grid item: grid-column, grid-row */
+/* ************************************************************************* */
+
+/* ************************************************************************* */
+/* ØVELSE 12: Mere brug af repeat
+
+ 1. Gør <main> til en grid container
+ 2. Brug repeat til at lave 4 kolonner, hvor den første og den tredje er 2fr og kolonne 2 og 4 er 1fr.
+ -> NOTE: I repeat() funktionen vælger man først antallet af kolonner [4] og derefter det møster de skal følge [2fr og 1fr]. Der er komma efter antallet, men ikke imellem 2fr og 1fr.
+
+
+ Properties på grid container: display, grid-template-columns, gap
+/* ************************************************************************* */
+
+/* ************************************************************************* */
+/* ØVELSE 13: Brug af flere pseudo-classes a)
+
+ 1. Behold det grid du lavede i øvelse 12
+ 2. Giv hver tredje box en anden farve {pseudo-class'en :nth-of-type()}
+ -> NOTE: I parantesen efter pseudo-class'en skal man skrive et tal OG bogstavet 'n' for at vælge flere elementer. Prøv at se hvad der sker uden 'n' og med andre tal.
+
+
+ Properties på grid container: display, grid-template-columns, gap
+/* ************************************************************************* */
+
+/* ************************************************************************* */
+/* ØVELSE 14: Brug af flere pseudo-classes b)
+
+/* ************************************************************************* */
+/* ØVELSE 15: Et helt layout i p'er
+ 1. Lav et grid med 5 lige store kolonner
+ 2. Første og sidste element skal fylde alle kolonner
+ 3. Box 16 skal sidde helt til højre of fylde de to sidste kolonner (og 7 rows)
+ 4. Alle andre skal have samme størrelse
+
+ Properties på grid container: display, grid-template-columns, gap
+ main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1em;
+}
+p:first-child,
+p:last-child {
+  grid-column: 1 / -1;
+}
+.box16 {
+  grid-column: -1 / -3;
+  grid-row: 2 / span 7;
+}
+/* ************************************************************************* */
+
+/* FAGUDTRYK
+'grid container': Det element, der indeholder display: grid
+'grid item': De elementer der er 'direct descendants' af grid container
+'Direct descendants': Elementer, der er ét niveau under deres parent
+'Parent': Et element, der indeholder andre elementer
+'Child': Element, der befinder sig inde i et andet element 
+'Siblings': Elementer, der ligger 'ved siden af hinanden', dvs. findes på samme hierarkiske niveau under deres parent
+'pseudo-class': Et keyword sat sammen med en selector til at specificere et bestemt state (tilstand)
+'selector': Første del at CSS deklarationen. Selectoren peger direkte på et element i HTML dokumentet, enten ved brug af HTML elementet, dets class (.) eller id (#) eller vha descendant combinator, der bruger flere selectors i sammenhæng for præcist valg
+'property': Den 'egeneskab' man ønsker at deklarere (ved at give den en værdi). F.eks. 'background-color eller 'font-family' eller 'display'.
+'value': Den værdi der skrives efter en poroperty's kolon. F.eks. en farve, en konkret font eller værdien 'grid' som i: 'display: grid;'
+'descendant combinator': Kombinationen af to eller flere selectors (typisk ved brug af karekteren " " {mellemrum} )
+
+*/
+
+/* LØSNINGSFORSLAG */
+/* NOTE: 
+Husk at du kan high-light'e flere linjer og klikke SHIFT+CMD+7 (Mac) SHIFT+CTRL+7 (Win) for at skifte mellem kommetarer og aktiv kode
+*/
+/* ------------> Øvelse 1 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+} */
+/* ------------> Øvelse 2 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+} */
+/* ------------> Øvelse 3 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: 3fr 1fr 4fr;
+} */
+/* ------------> Øvelse 4 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.box04 {
+  grid-column: span 2;
+} */
+/* ------------> Øvelse 5 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.box04 {
+  grid-column: span 2;
+  grid-row: span 2;
+} */
+/* ------------> Øvelse 6 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.box04 {
+  grid-column: span 2;
+}
+.box08 {
+  grid-column: span 2;
+}
+.box03 {
+  grid-row: span 3;
+} */
+/* ------------> Øvelse 7 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.box04 {
+  grid-column: 2 / 4;
+}
+.box07 {
+  grid-column: 2 / 4;
+  grid-row: 3;
+} */
+/* ------------> Øvelse 8 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1em;
+}
+.box04 {
+  grid-column: 1 / -1;
+}
+.box13 {
+  grid-column: 1 / 5;
+  grid-row: span 3;
+} */
+/* ------------> Øvelse 9 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1em;
+}
+.box14 {
+  grid-column: -1 / -3;
+  grid-row: 1 / span 3;
+  background-color: rgb(196, 243, 139);
+} */
+/* ------------> Øvelse 10 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1em;
+}
+p:last-child {
+  grid-column: -1 / -3;
+  grid-row: 1 / span 3;
+  background-color: rgb(196, 243, 139);
+} */
+/* ------------> Øvelse 11 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1em;
+}
+p:first-child {
+  grid-column: -1 / -3;
+  grid-row: 1 / span 3;
+  background-color: rgb(196, 243, 139);
+} */
+/* ------------> Øvelse 12 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr 1fr);
+  gap: 1em;
+} */
+/* ------------> Øvelse 13 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr 1fr);
+  gap: 1em;
+}
+p:nth-of-type(3n) {
+  background-color: aquamarine;
+} */
+/* ------------> Øvelse 14 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr 1fr);
+  gap: 1em;
+}
+p:nth-child(7) {
+  background-color: aquamarine;
+}
+p:first-of-type {
+  background-color: rgb(224, 112, 123);
+}
+p:last-of-type {
+  background-color: rgb(88, 192, 230);
+} */
+/* ------------> Øvelse 15 <----------- */
+/* main {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1em;
+}
+p:first-child,
+p:last-child {
+  grid-column: 1 / -1;
+}
+.box16 {
+  grid-column: -1 / -3;
+  grid-row: 2 / span 7;
+} */
